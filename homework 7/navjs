@@ -1,0 +1,48 @@
+<html>
+<head>
+<style>
+body 
+{
+    margin:0px;
+}
+#nav 
+{
+    background-color:gray;
+    width:20px;
+    height:100%;
+    transition: width 1s; 
+}
+#navMain 
+{
+    padding-left:20px;
+    padding-top:40px;
+}
+#nav a 
+{
+    color:white;
+    white-space: nowrap;
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+<div id="nav" onmouseover="navWide()" onmouseout="navaf()">
+  <div id="navMain">
+    <p><a href="#aboutus">關於本站</a></p>
+    <p><a href="#example1">範例1</a></p>
+    <p><a href="#example2">範例2</a></p>
+    <p><a href="#example3">範例3</a></p>
+  </div>
+</div>
+<script>
+    function navWide() {
+        let nav = document.getElementById('nav')
+        nav.style.width = '100px';
+    }
+    function navaf() {
+        let nav = document.getElementById('nav')
+        nav.style.width = '20px';
+    }
+</script>
+</body>
+</html>

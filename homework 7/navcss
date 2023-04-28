@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+body 
+{
+    margin:0px;
+}
+#nav
+{
+    background-color:gray;
+    width:20px;
+    height:100%;
+    transition: width 1s;     
+}
+#navMain 
+{ 
+    padding-left:20px;
+    padding-top:40px; 
+}
+#nav a
+{
+    color:white;
+    white-space: nowrap;
+    text-decoration: none;   
+}
+#nav b
+{
+    color:white;
+    white-space: nowrap;
+    text-decoration: none;   
+}
+#nav:hover
+{
+    width:90px;
+}
+#nav a:hover 
+{
+    color:red;
+}
+#nav b:hover 
+{
+    color:yellow;
+}
+</style>
+</head>
+
+<body>
+<div id="nav">
+    <div id ="navmain">
+    <p><a href="red">範例1</a></p>
+    <p><b href="yellow">範例2</b></p>
+  </div>
+</div>
+
+</body>
+<script>
+
+</script>
+</html>
