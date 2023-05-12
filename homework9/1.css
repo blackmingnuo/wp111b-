@@ -66,3 +66,7 @@ body {
   .bigmargin {
     margin: 20px;
   }
+
+  #main{
+    padding:10px 10px 10px 10px;
+  }
