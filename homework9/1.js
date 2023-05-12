@@ -6,9 +6,9 @@ let pages = {
      <p>本網頁可以按功能表去切換畫面</p> 
     `,
     '#login':`
-     <h1>輸入張號密碼<h1>
-     <input type="text" placeholder="帳號"/><br/>
-     <input type="password" placeholder="密碼"/><br/>
+    <h1>輸入張號密碼<h1>
+    <input type="text" placeholder="帳號"/><br/>
+    <input type="password" placeholder="密碼"/><br/>
      `,
 
     '#logout':` 
