@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>圈圈叉叉</title>
+  <style>
+    .board {
+      display: flex;
+      flex-wrap: wrap;
+      width: 310px;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      font-size: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <div class="cell" onclick="makeMove(0)"></div>
+    <div class="cell" onclick="makeMove(1)"></div>
+    <div class="cell" onclick="makeMove(2)"></div>
+    <div class="cell" onclick="makeMove(3)"></div>
+    <div class="cell" onclick="makeMove(4)"></div>
+    <div class="cell" onclick="makeMove(5)"></div>
+    <div class="cell" onclick="makeMove(6)"></div>
+    <div class="cell" onclick="makeMove(7)"></div>
+    <div class="cell" onclick="makeMove(8)"></div>
+  </div>
+
+  <script>
+    let currentPlayer = 'O';
+    let board = ['', '', '', '', '', '', '', '', ''];
+    const winningCombinations = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+      [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+      [0, 4, 8], [2, 4, 6] 
+    ];
+
+    function makeMove(index) {
+      if (board[index] === '') {
+        board[index] = currentPlayer;
+        document.getElementsByClassName('cell')[index].innerText = currentPlayer;
+        if (checkWin(currentPlayer)) {
+          alert(currentPlayer + '獲勝！');
+          resetGame();
+        } else {
+          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
+      }
+    }
+
+    function checkWin(player) {
+      for (let combination of winningCombinations) {
+        if (
+          board[combination[0]] === player &&
+          board[combination[1]] === player &&
+          board[combination[2]] === player
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function resetGame() {
+      board = ['', '', '', '', '', '', '', '', ''];
+      currentPlayer = 'X';
+      const cells = document.getElementsByClassName('cell');
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].innerText = '';
+      }
+    }
+  </script>
+</body>
+</html>
